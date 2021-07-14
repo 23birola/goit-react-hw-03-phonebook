@@ -1,0 +1,11 @@
+input {
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid rgba(211, 211, 211, 0.897);
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: rgba(98, 119, 240, 0.89);
+  outline-color: rgba(98, 119, 240, 0.89);
+}
