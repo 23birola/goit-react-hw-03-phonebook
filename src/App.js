@@ -19,6 +19,23 @@ export default class App extends Component {
     filter: '',
   };
 
+   componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem("contacts"));
+
+    if (contacts) {
+      this.setState({ contacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const prevContacts = prevState.contacts;
+    const nextContacts = this.state.contacts;
+
+    if (prevContacts !== nextContacts) {
+      localStorage.setItem("contacts", JSON.stringify(nextContacts));
+    }
+  }
+
   onSubmit = (e) => {
     e.preventDefault();
     const name = e.target.elements.name.value;
